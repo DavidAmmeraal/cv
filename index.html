@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="container mx-auto">
+    <header class="grid grid-cols-12 grid-gap gap-1">
+      <div class="title col-span-8">
+        <h1 class="text-4xl">David Ammeraal</h1>
+        <h2 class="text-xl">Software Engineer specialising in UI/JavaScript</h2>
+      </div>
+      <address class="address-details col-span-4">
+        <ul>
+          <li>+31 (0)6 52 57 36 50</li>
+          <li>david.ammeraal@gmail.com</li>
+          <li>https://davidammeraal.nl</li>
+        </ul>
+      </aside>
+    </header>
+    <main class="grid grid-cols-12 grid-gap gap-1">
+      <div class="col-span-8">
+        <div class="summary">
+          <h1 class="text-2xl">Summary</h1>
+          <p>
+            Engineer with 12+ years of proven experience designing and implementing software, as well as building and leading teams.
+            Specialised in JavaScript/Typescript/NodeJS. Has expert knowledge of React and its ecosystem. 
+            Possesses a strong passion for software development and a desire to always improve the team as well as himself. 
+            Assertive, practical, and goal-oriented with a strong emphasis on quality and high pace.
+          </p>
+        </div>
+        <div id="experiences">
+          <h2 class="text-2xl">Experiences</h1>
+          <div class="company">
+            <div class="company-heading flex">
+              <h3 class="text-xl flex-1">Quin B.V.</h3>
+              <span aria-role="doc-subtitle" class="block flex">
+                <span class="text-xs">Amsterdam, June 2021 - September 2023</span>
+              </span>
+            </div>
+            <p>
+              Quin is a startup that is building a platform to lower the load on the first and second line health care.
+            </p>
+            <div class="experience">
+              <div class="flex">
+                <h3 class="text-xl flex-1">
+                  Chapter Lead - Frontend
+                </h3>
+                <span aria-role="doc-subtitle" class="block flex">
+                  <span class="text-xs">April 2022 - September 2023</span>
+                </span>
+              </div>      
+              <ul class="list-disc">
+                <li>Built up and maintained chapter of 18 engineers.</li>
+                <li>Managed and facilitated the personal development and performance of direct reports by setting measurable realistic goals and actively tracking them.</li>
+                <li>Improved development experience/velocity of engineers by proposing and building tooling.</li>
+                <li>Assured consistent codebase by formulating code guidelines.</li>
+                <li>Maintained consumer facing app availability by means of APM tooling and defining lightweight business processes.</li>
+                <li>Proposed, designed and implemented a BFF layer using TRPC/NodeJS to provide (aggregated) access to backend OpenAPI services.</li>
+              </ul>
+            </div>
+            <div class="experience">
+              <div class="flex">
+                <h3 class="text-xl flex-1">
+                  Senior Frontend Engineer
+                </h3>
+                <span aria-role="doc-subtitle" class="block flex">
+                  <span class="text-xs">June 2021 - April 2023</span>
+                </span>
+              </div>
+              <ul class="list-disc">
+                <li>Designed technical solutions according to requirements. Led, facilitated and assisted during the implementation using a frontend stack mainly consisting of react(-native) and react-query.</li>
+                <li>Built CI/CD pipelines within a monorepo for assuring code quality, test coverage and ease of deployment.</li>
+                <li>Created a bot for MS Teams to automatically assign reviewers MR/PR's according to several business rules.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="company">
+            <div class="company-heading flex">
+              <h3 class="text-xl flex-1">Noterik B.V.</h3>
+              <span aria-role="doc-subtitle" class="block flex">
+                <span class="text-xs">Amsterdam, July 2012 - June 2021</span>
+              </span>
+            </div>
+            <p>
+              Noterik is a software company specialised in video processing and R&D. Noterik has a diverse set of clients ranging from musea in cultural heritage, universities and research institutes.
+            </p>
+            <div class="experience">
+              <h3>
+                <span class="text-lg block">Senior fullstack engineer</span>
+              </h3>           
+              <ul class="list-disc">
+                <li>Designed an app to synchronously display media (video/photo/
+                  highspeed video) and high-frequency measurement
+                  data recorded during model tests with infinitesimal
+                  tolerances (accurate up to 1 microsecond).</li>
+                <li>Co-designed and implemented a streaming algorithm for
+                  interpolation of high-frequency measurements (192 khz
+                  HDF5’s over several hours) while maintaining
+                  peaks to reduce network traffic.</li>
+                <li>Conducted (technical) interviews with candidates resulting in several succesful hires.</li>
+              </ul>
+            </div>
+          </div> 
+        </div>
+      </div>
+			<div class="col-span-4">
+        <div class="personal-details">
+          <h2 class="text-xl">Personal details</h2>
+          <dl>
+            <dt class="font-bold">Location</dd>
+            <dd>Hilversum, The Netherlands</di>
+            
+            <dt class="font-bold">Nationality</dt>
+            <dd>Dutch</dd>
+          </dl>
+        </div>
+        <div class="personal-details">
+          <h2 class="text-xl">Education</h2>
+          <dl>
+            <dt class="font-bold">Bachelor of ICT</dt>
+            <dd>Informatica / Computer Science</dd>
+            <dd>Hogeschool Utrecht</dd>
+            <dd>2008 - 2012</dd>
+          </dl>
+        </div>
+        <div class="">
+          <h2 class="text-xl">Skills</h2>
+          <ul class="list-disc">
+            <li>JavaScript/TypeScript</li>
+            <li>React/React Native</li>
+            <li>HTML/CSS</li>
+            <li>NodeJS</li>
+            <li>Git</li>
+            <li>CI/CD</li>
+            <li>Testing</li>
+            <li>Agile/Scrum</li>
+            <li>Leadership</li>
+            <li>Interviewing</li>
+          </ul>
+			</div>
+    </main>
+  </body>
+</html>
