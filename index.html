@@ -5,26 +5,158 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,900">
 		<script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style type="text/css" media="print">
+      @page 
+      {
+        width: 215mm;
+        height: 100vh;
+        margin: 0;  /* this affects the margin in the printer settings */
+      }
+  
+      html
+      {
+          background-color: #FFFFFF; 
+          margin: 0px;  /* this affects the margin on the html before sending to printer */
+          font-size: 12px;
+      }
+  
+      body
+      {
+          width: 215mm;
+          height: 100vh;
+          margin: 10mm 15mm 10mm 15mm; /* margin you want for the content */
+      }
+      </style>
+   <style type="text/tailwindcss">
+      @layer components {  
+        
+        header {
+          @apply bg-slate-100 border-b-2 border-slate-200;
+        }
+
+        .skills {
+          @apply flex flex-wrap gap-2;
+        }
+        .skills > li {
+          @apply bg-slate-200 px-2 rounded text-slate-700;
+        }
+
+        .company {
+          @apply mb-4 bg-slate-50 -mx-5 px-5 py-4 border text-slate-800;
+        }
+
+        .company > hr {
+          @apply -mx-5 mb-2;
+        }
+
+        .company ul {
+          @apply px-4
+        }
+
+        .company li {
+          @apply list-outside;
+        }
+
+        .company [aria-role="doc-subtitle"] {
+          @apply text-right;
+        }
+
+        .company .company-heading {
+          @apply flex;
+        }
+
+        .company .company-title{
+          @apply flex-1 text-xl font-medium text-slate-800;
+        }
+
+        .company .company-desc {
+          @apply mb-2;
+        }
+
+        .content-block {
+          @apply mb-4
+        }
+
+        h1 {
+          @apply text-4xl mb-3;
+        }
+
+        h2 {
+          @apply text-2xl mb-3;
+        }
+
+        h3 {
+          @apply text-xl mb-2;
+        }
+
+        h4 {
+          @apply text-lg mb-2 font-medium;;
+        }
+
+        .experience {
+          @apply content-block;
+        }
+
+        .experience .experience-heading {
+          @apply flex;
+        }
+
+        .experience .experience-title {
+          @apply flex-1 text-lg font-medium text-slate-800;
+        }
+
+        .personal-details {
+          @apply content-block;
+        }
+
+        dl > dt {
+          font-weight: 500
+        }
+
+      }
+    </style>
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            screens: {
+                'print': { 'raw': 'print' },
+            }
+          }
+        }
+      }
+    </script>
   </head>
-  <body class="container mx-auto">
-    <header class="grid grid-cols-12 grid-gap gap-1">
-      <div class="title col-span-8">
-        <h1 class="text-4xl">David Ammeraal</h1>
-        <h2 class="text-xl">Software Engineer specialising in UI/JavaScript</h2>
+  <body>
+    <header class="pt-10 pb-5">
+      <div class="md:container print:px-12 mx-auto grid grid-cols-12 gap-12">
+        <div class="title col-span-8">
+          <h1>David Ammeraal</h1>
+          <h2 class="mb-0">Software Engineer specialising in UI/JavaScript</h2>
+          <ul class="list-inline">
+            
+          </ul>
+        </div>
+        <address class="address-details col-span-4 flex items-end not-italic pl-3 text-slate-700">
+          <ul>
+            <li>+31 (0)6 52 57 36 50</li>
+            <li>david.ammeraal@gmail.com</li>
+          </ul>
+        </address>
       </div>
-      <address class="address-details col-span-4">
-        <ul>
-          <li>+31 (0)6 52 57 36 50</li>
-          <li>david.ammeraal@gmail.com</li>
-          <li>https://davidammeraal.nl</li>
-        </ul>
-      </aside>
     </header>
-    <main class="grid grid-cols-12 grid-gap gap-1">
-      <div class="col-span-8">
-        <div class="summary">
-          <h1 class="text-2xl">Summary</h1>
+    <main class="container print:px-12 mx-auto grid grid-cols-12 grid-gap gap-6">
+      <div class="col-span-8 mt-3">
+        <div class="summary content-block">
+          <h2>Summary</h2>
           <p>
             Engineer with 12+ years of proven experience designing and implementing software, as well as building and leading teams.
             Specialised in JavaScript/Typescript/NodeJS. Has expert knowledge of React and its ecosystem. 
@@ -32,69 +164,68 @@
             Assertive, practical, and goal-oriented with a strong emphasis on quality and high pace.
           </p>
         </div>
-        <div id="experiences">
-          <h2 class="text-2xl">Experiences</h1>
+        <div id="experiences content-block">
+          <h2>Professional experience</h1>
           <div class="company">
-            <div class="company-heading flex">
-              <h3 class="text-xl flex-1">Quin B.V.</h3>
-              <span aria-role="doc-subtitle" class="block flex">
+            <div class="company-heading">
+              <h3 class="company-title">Quin B.V.</h3>
+              <span aria-role="doc-subtitle">
                 <span class="text-xs">Amsterdam, June 2021 - September 2023</span>
               </span>
             </div>
-            <p>
-              Quin is a startup that is building a platform to lower the load on the first and second line health care.
-            </p>
+            <hr />
             <div class="experience">
-              <div class="flex">
-                <h3 class="text-xl flex-1">
+              <div class="experience-heading">
+                <h4 class="experience-title">
                   Chapter Lead - Frontend
-                </h3>
+                </h4>
                 <span aria-role="doc-subtitle" class="block flex">
                   <span class="text-xs">April 2022 - September 2023</span>
                 </span>
               </div>      
-              <ul class="list-disc">
-                <li>Built up and maintained chapter of 18 engineers.</li>
-                <li>Managed and facilitated the personal development and performance of direct reports by setting measurable realistic goals and actively tracking them.</li>
-                <li>Improved development experience/velocity of engineers by proposing and building tooling.</li>
-                <li>Assured consistent codebase by formulating code guidelines.</li>
-                <li>Maintained consumer facing app availability by means of APM tooling and defining lightweight business processes.</li>
-                <li>Proposed, designed and implemented a BFF layer using TRPC/NodeJS to provide (aggregated) access to backend OpenAPI services.</li>
+              <ul class="list-disc list-inside">
+                <li>Built up and maintained a chapter of 18 engineers.</li>
+                <li>Managed and facilitated the personal development and performance of direct reports.</li>
+                <li>Led a team to rebuild existing react-native application into a web app to facilitate crucial integration with a partner.</li>
+                <li>Improved development experience/velocity of engineers by creating tooling such as a CLI utilities to download content from external resources and generate API from specs.</li>
+                <li>Assured consistent and high quality codebase by defining coding guidelines, as well as performing extensive code reviews.</li>
+                <li>Maintained and assured client facing app availability and observability by means of APM tooling and defining lightweight business processes.</li>
+                <li>Proposed, designed and implemented a BFF layer using TRPC/NodeJS to provide frontend access to backend OpenAPI services.</li>
               </ul>
             </div>
+            <hr />
             <div class="experience">
-              <div class="flex">
-                <h3 class="text-xl flex-1">
+              <div class="experience-heading">
+                <h4 class="experience-title">
                   Senior Frontend Engineer
                 </h3>
                 <span aria-role="doc-subtitle" class="block flex">
                   <span class="text-xs">June 2021 - April 2023</span>
                 </span>
               </div>
-              <ul class="list-disc">
-                <li>Designed technical solutions according to requirements. Led, facilitated and assisted during the implementation using a frontend stack mainly consisting of react(-native) and react-query.</li>
-                <li>Built CI/CD pipelines within a monorepo for assuring code quality, test coverage and ease of deployment.</li>
+              <ul class="list-disc list-inside">
+                <li>Designed technical solutions after gathering requirements. Led, facilitated and assisted implementation using a frontend stack mainly consisting of react(-native) and react-query.</li>
+                <li>Built CI/CD pipelines within a monorepo for assuring code quality, testing coverage and ease of deployment.</li>
                 <li>Created a bot for MS Teams to automatically assign reviewers MR/PR's according to several business rules.</li>
               </ul>
             </div>
           </div>
           <div class="company">
-            <div class="company-heading flex">
-              <h3 class="text-xl flex-1">Noterik B.V.</h3>
+            <div class="company-heading">
+              <h3 class="company-title">Noterik B.V.</h3>
               <span aria-role="doc-subtitle" class="block flex">
                 <span class="text-xs">Amsterdam, July 2012 - June 2021</span>
               </span>
             </div>
-            <p>
-              Noterik is a software company specialised in video processing and R&D. Noterik has a diverse set of clients ranging from musea in cultural heritage, universities and research institutes.
-            </p>
+            <hr />
             <div class="experience">
-              <h3>
-                <span class="text-lg block">Senior fullstack engineer</span>
-              </h3>           
+              <div class="experience-heading">
+                <h4 class="experience-title">
+                  <span class="text-lg block">Senior Fullstack Engineer</span>
+                </h4>  
+              </div>      
               <ul class="list-disc">
-                <li>Designed an app to synchronously display media (video/photo/
-                  highspeed video) and high-frequency measurement
+                <li>Designed an app to synchronously display media (video/photo/highspeed video) and high-frequency measurement
                   data recorded during model tests with infinitesimal
                   tolerances (accurate up to 1 microsecond).</li>
                 <li>Co-designed and implemented a streaming algorithm for
@@ -107,33 +238,36 @@
           </div> 
         </div>
       </div>
-			<div class="col-span-4">
-        <div class="personal-details">
-          <h2 class="text-xl">Personal details</h2>
+			<div class="col-span-4 ml-3 pl-3 border-l-2">
+        <div class="personal-details mt-3">
+          <h2>Personal details</h2>
           <dl>
-            <dt class="font-bold">Location</dd>
+            <dt>Location</dd>
             <dd>Hilversum, The Netherlands</di>
             
-            <dt class="font-bold">Nationality</dt>
+            <dt>Nationality</dt>
             <dd>Dutch</dd>
           </dl>
         </div>
         <div class="personal-details">
-          <h2 class="text-xl">Education</h2>
-          <dl>
-            <dt class="font-bold">Bachelor of ICT</dt>
-            <dd>Informatica / Computer Science</dd>
-            <dd>Hogeschool Utrecht</dd>
-            <dd>2008 - 2012</dd>
-          </dl>
+          <h2>Education</h2>
+          <p class="font-medium">Bachelor of ICT</p>
+          <p>
+            Informatica / Computer Science<br />
+            Hogeschool Utrecht<br />
+            2008 - 2012
+          </p>
         </div>
-        <div class="">
-          <h2 class="text-xl">Skills</h2>
-          <ul class="list-disc">
-            <li>JavaScript/TypeScript</li>
-            <li>React/React Native</li>
+        <div>
+          <h2>Skills</h2>
+          <ul class="skills">
+            <li>JavaScript</li>
+            <li>TypeScript</li>
+            <li>React</li>
+            <li>React-native</li>
             <li>HTML/CSS</li>
             <li>NodeJS</li>
+            <li>Java</li>
             <li>Git</li>
             <li>CI/CD</li>
             <li>Testing</li>
