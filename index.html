@@ -136,7 +136,7 @@
     </script>
   </head>
   <body>
-    <header class="pt-10 pb-5">
+    <header class="pt-10 pb-5 print:bg-slate-100">
       <div class="md:container print:px-12 mx-auto grid grid-cols-12 gap-12">
         <div class="title col-span-8">
           <h1>David Ammeraal</h1>
@@ -170,10 +170,24 @@
             <div class="company-heading">
               <h3 class="company-title">Quin B.V.</h3>
               <span aria-role="doc-subtitle">
-                <span class="text-xs">Amsterdam, June 2021 - September 2023</span>
+                <span class="text-xs">Amsterdam, June 2021 - present</span>
               </span>
+              
             </div>
             <hr />
+            <div class="experience">
+              <div class="experience-heading">
+                <h4 class="experience-title">Principal Engineer</h4>
+                <span aria-role="doc-subtitle" class="block flex">
+                  <span class="text-xs">September 2023 - present</span>
+                </span>
+              </div>
+              
+              <ul class="list-disc list-inside">
+                <li>Proposed, designed and implemented a BFF layer using tRPC/NodeJS to provide frontend access to backend OpenAPI services, emphasising scalability and performance.</li>
+                <li>Maintained and assured client facing app availability and observability by means of APM tooling and defining lightweight business processes.</li>
+              </ul>
+            </div>
             <div class="experience">
               <div class="experience-heading">
                 <h4 class="experience-title">
@@ -186,11 +200,10 @@
               <ul class="list-disc list-inside">
                 <li>Built up and maintained a chapter of 18 engineers.</li>
                 <li>Managed and facilitated the personal development and performance of direct reports.</li>
-                <li>Led a team to rebuild an existing React-native application into a web app to facilitate crucial integration with a partner.</li>
+                <li>Build and managed a team to rebuild an existing React-native application into a web app to facilitate crucial integration with a partner.</li>
                 <li>Improved development experience/velocity of engineers by creating tooling such as CLI utilities to download content from external resources and generate API from specs.</li>
                 <li>Assured code quality by defining coding guidelines, as well as performing extensive code reviews.</li>
-                <li>Maintained and assured client facing app availability and observability by means of APM tooling and defining lightweight business processes.</li>
-                <li>Proposed, designed and implemented a BFF layer using tRPC/NodeJS to provide frontend access to backend OpenAPI services.</li>
+                <li>Led initiative to consolidate fragmented UI components into a single design system.</li>
               </ul>
             </div>
             <hr />
@@ -225,9 +238,10 @@
                 </h4>  
               </div>      
               <ul class="list-disc">
-                <li>Designed an app to synchronously display media (video/photo/highspeed video) and high-frequency measurement
-                  data recorded during model tests with infinitesimal
+                <li>Designed and implemented an (web/offline) app to synchronously display media (video/photo/highspeed video) and high-frequency measurement
+                  data recorded during maritime model tests with infinitesimal
                   tolerances (accurate up to 1 microsecond).</li>
+                <li>Created an installable Electron app along with a building pipeline in order to create offline interactive reporting of highly confidential model tests for clients such as the dutch navy.</li>
                 <li>Co-designed and implemented a streaming algorithm for
                   interpolation of high-frequency measurements (192 kHz
                   HDF5’s over several hours) while maintaining
@@ -253,8 +267,8 @@
           <h2>Education</h2>
           <p class="font-medium">Bachelor of ICT</p>
           <p>
-            Informatica / Computer Science<br />
-            Hogeschool Utrecht<br />
+            Informatica / Computer Science - <br />
+            University of Applied Sciences Utrecht<br />
             2008 - 2012
           </p>
         </div>
@@ -271,9 +285,11 @@
             <li>Git</li>
             <li>CI/CD</li>
             <li>Testing</li>
-            <li>Agile/Scrum</li>
+            <li>Agile</li>
+            <li>Scrum</li>
             <li>Leadership</li>
             <li>Interviewing</li>
+            <li>Electron</li>
           </ul>
 			</div>
     </main>
